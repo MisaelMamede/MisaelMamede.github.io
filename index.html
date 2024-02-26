@@ -1,0 +1,115 @@
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURMULÁRIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#000000;
+            margin: 16px;
+            padding: 16px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background:#7B68EE;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(25,25,112);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color:;
+            color: blue;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #000000;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 16px;
+            color:#32CD32;
+            font-size: 15px;
+        }
+
+        /* Estilos CSS para animação */
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .fadeOutAnimation {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="primeiro_nome">Primeiro Nome:</label>
+        <input type="text" id="primeiro_nome" name="primeiro_nome">
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome">
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone">
+       
+        <label for="Estado">Estado:</label>
+        <input type="text" id="Estado" name="Estado">
+
+        <label for="telefone">Local de Interesse:</label>
+        <input type="text" id="Local de Interesse" name="Local de interesse">
+
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="confirmationMessage" class="fadeOutAnimation" style="display:none;">Formulário enviado com sucesso!</div>
+
+    <div class="copyright">&COPY; MEU SITE. TODOS OS DIREITOS RESERVADOS.</div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            // Impede o envio do formulário
+            event.preventDefault();
+            
+            // Exibe a mensagem de confirmação
+            document.getElementById("confirmationMessage").style.display = "block";
+
+            // Adiciona a classe de animação para fazer a mensagem desaparecer
+            setTimeout(function() {
+                document.getElementById("confirmationMessage").classList.remove("fadeOutAnimation");
+                document.getElementById("confirmationMessage").style.display = "none";
+            }, 2000); // Mude o valor de 2000 para ajustar a duração da animação
+        });
+    </script>
+</body>
+</html>
